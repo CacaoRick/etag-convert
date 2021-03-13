@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>etag</title>
+  <script>
+    function convert() {
+      let hex1 = document.getElementById('hex1')
+      let hex2 = document.getElementById('hex2')
+      let result1 = document.getElementById('result1')
+      let result2 = document.getElementById('result2')
+
+      let dec1 = String(parseInt(hex1.value, 16)).padStart(6, '0')
+      let dec2 = String(parseInt(hex2.value, 16)).padStart(6, '0')
+
+      result1.innerText = dec1
+      result2.innerText = dec2
+    }
+  </script>
+</head>
+
+<body style="height: 100vh; display: flex; flex-direction: column; align-items: center;">
+  <div style="width: 400px; display: flex; flex-direction: column; margin-top: 160px">
+    <div style="margin: 16px;">
+      <h5 style="margin: 0; align-self: flex-start;">ETag 號碼：</h5>
+      <span>XXXX</span>
+      <span>XXXX</span>
+      <span style="border-bottom: 3px solid red;">XXXX</span>
+      <span style="border-bottom: 3px solid blue;">XXXX</span>
+    </div>
+
+    <div style="margin: 4px 16px;">
+      輸入<span style="color: red;">後八碼前段</span>
+      <input id="hex1" type="text">
+    </div>
+    <div style="margin: 4px 16px;">
+      輸入<span style="color: blue;">後八碼後段</span>
+      <input id="hex2" type="text">
+    </div>
+
+    <button style="margin: 16px;" type="button" onclick="convert()">轉換</button>
+
+    <h4 id="result"></h4>
+    <div style="margin: 16px;">
+      <h4 style="margin: 0; align-self: flex-start;">門禁系統：</h4>
+      <div style="margin: 4px 0px;">
+        組碼：
+        <span style="font-size:large; font-weight: bold;" id="result1"></span>
+      </div>
+      <div style="margin: 4px 0px;">
+        卡號：
+        <span style="font-size:large; font-weight: bold;" id="result2"></span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
